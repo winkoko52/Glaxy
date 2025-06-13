@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "build": "src --out-dir src"
     "dev": "node --watch src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
