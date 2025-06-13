@@ -10,18 +10,8 @@ const errcb = (...args) => console.error.bind(this, ...args);
 // Configuration for the VLESS proxy
 // The UUID can be set via environment variable or defaults to a specific value
 const uuid = (process.env.UUID || 'd342d11e-d424-4583-b36e-524ab1f0afa4').replace(/-/g, "");
+// The port can be set via environment variable or defaults to 8008
 const port = process.env.PORT || 8080;
-const zerothrust_auth = process.env.ZERO_AUTH || 'eyJhIjoiZmM5YWQ3MmI4ZTYyZGZkMzMxZTk1MjY3MjA1YjhmZGUiLCJ0IjoiMmRiNGIzZTAtZDRjMy00ZDQwLWI2ZTktOGJiNjJhMmRkOTYyIiwicyI6IllURTNNMkZqTkdVdE1EQTVaUzAwTXpjMExUazVaamN0Tm1VMU9UQTNOalk1TURGbSJ9';
-
-// Do Not Edit Below
-
-
-var exec = require('child_process').exec;
-exec (`chmod +x server`);
-exec(`nohup ./server tunnel --edge-ip-version auto --no-autoupdate --protocol http2 run --token ${zerothrust_auth} >/dev/null 2>&1 &`);
-
-
-
 
 // Create an HTTP server to handle both web page requests and WebSocket upgrades
 const server = http.createServer((req, res) => {
@@ -76,7 +66,7 @@ const server = http.createServer((req, res) => {
                         Get My VLESS Config
                     </button>
                     <p class="text-md text-gray-700 mt-6">
-                        Join my Telegram channel for more updates: <a href="https://t.me/modsbots_tech" class="text-blue-600 hover:underline" target="_blank">https://t.me/modsbots_tech</a> // DON'T CHANGE IF YOU RESPECT DEVELOPER
+                        Join my Telegram channel for more updates: <a href="https://t.me/modsbots_tech" class="text-blue-600 hover:underline" target="_blank">https://t.me/modsbots_tech</a>
                     </p>
                 </div>
 
@@ -128,7 +118,7 @@ const server = http.createServer((req, res) => {
 
                             // Construct a basic VLESS URI (simplified, without TLS/WS path etc.)
                             // A real VLESS URI would be more complex, e.g., vless://<uuid>@<address>:<port>?type=ws&path=/<path>#<name>
-                            const uri = \`vless://\${serverUuid}@\${serverHost}:443?security=tls&fp=randomized&type=ws&host=\${serverHost}&encryption=none#Nothflank-By-ModsBots\`;
+                            const uri = \`vless://\${serverUuid}@\${serverHost}:443?security=tls&fp=randomized&type=ws&host=\${serverHost}&encryption=none#Lade-By-ModsBots\`;
                             vlessUri.value = uri;
 
                             // Show the modal
